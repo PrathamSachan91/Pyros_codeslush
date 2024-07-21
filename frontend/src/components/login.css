@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+.Login{
+   overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 87vh;
+}
+.wrapper{
+   width: 420px;
+   background-color:#8787e3;
+   border: 2px solid rgb(255, 255, 255 ,.2);
+   box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+   color: #000000;
+   border-radius: 10px;
+   padding: 25px 40px;
+}
+
+.wrapper h1{
+   font-size: 36px;
+   text-align: center;
+}
+.wrapper h3{
+   font-size: 15px;
+   text-align: center;
+   margin-top: 10px;
+}
+.wrapper .input-box{
+   position: relative;
+   width: 100%;
+   height: 50px;
+   margin: 30px 0;
+}
+
+.input-box input {
+   width: 100%;
+   height: 100%;
+   background: transparent;
+   border: none;
+   outline: none;
+   border: 2px solid #fff;
+   border-radius: 40px;
+   font-size: 16px;
+   color: #fff;
+   padding: 20px 45px 20px 20px;
+}
+.input-box input::placeholder{
+   color: #fff;
+}
+.input-box img {
+   position: absolute;
+   width: 23px;
+   right: 20px;
+   top: 50%;
+   transform: translateY(-50%);
+   font-size: 20px;
+}
+.wrapper .remember-forget {
+   display: flex;
+   justify-content: space-between;
+   font-size: 14.5px;
+   margin: -15px 5px 15px;
+}
+.wrapper .media-option {
+   display: flex;
+   justify-content: space-between;
+   font-size: 14.5px;
+   margin: 10px 5px 10px;
+}
+.media-option img{
+    width: 13px;
+    margin-right: 4px;
+}
+.remember-forget label input{
+   accent-color: #fff;
+   margin-right: 3px;
+}
+.remember-forget a{
+   color: #000000;
+   text-decoration: none;
+}
+.wrapper .btn{
+   width: 100%;
+   height: 45px;
+   background: #fff;
+   color: #000000;
+   border: none;
+   outline: none;
+   border-radius: 40px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+   font-size: 16px;
+   font-weight: 600;
+}
+.wrapper .register-link{
+   font-size: 14.5px;
+   text-align: centre;
+   margin: 20px 0 15px;
+}
+.register-link p a{
+   text-decoration: none;
+   font-weight: 600;
+   color: #000000;
+}
+.register-link p a:hover{
+   text-decoration: underline;
+}
+span{
+   color: rgb(0, 21, 255);
+   text-align: center;
+}
+.OTP img{
+    width: 17px;
+    margin-right: 4px;
+}
+.OTP{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14.5px;
+    margin: 10px 5px 10px;
+}
+.dark .wrapper{
+    background-color: #1b2f5b;
+}
+.dark span{
+    color: #ffffff;
+}
+.dark button{
+    color: #000000;
+}
+.dark .remember-forget a{
+   color: #ffffff;
+}
+.dark .register-link p a{
+    color: #fff;
+}
+@media(max-width:700px){
+    .Login{
+        min-height: 90vh;
+    }
+    .wrapper{
+        height: 480px;
+        width: 400px;
+    }
+    .media-option img{
+        width: 11px;
+    }
+    .input-box img{
+        width: 20px;
+    }
+    .wrapper h1{
+        font-size: 35px;
+    }
+    .wrapper .input-box{
+        height: 40px;
+    }
+    .wrapper .btn{
+        height: 40px;
+    }
+}

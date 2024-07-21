@@ -1,0 +1,20 @@
+*{
+  margin: 0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: sans-serif;
+}
+.contain {
+  width: 100%;
+  background: #ced8ff;
+  transition: .5sec;
+}
+.goto{
+  background: #ced8ff;
+}
+.routing{
+  padding: 5px 5px;
+}
+.routing.dark{
+  background-color: #14213d;
+}

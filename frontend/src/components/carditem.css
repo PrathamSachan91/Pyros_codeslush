@@ -1,0 +1,19 @@
+.div1{
+    background-color: rgb(255, 255, 255);
+}
+.dark .div1{
+    background-color: #14213d;
+}
+.card{
+    background-color: #6f6fcf;
+}
+.edit-btn{
+    display: flex;
+    justify-content: start;
+}
+.card-text{
+    color: #fff;
+}
+.dark .card{
+    background-color: #1D267D;
+}

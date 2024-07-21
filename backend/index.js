@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+// index.js
+>>>>>>> 6171a53e32101f8ecf2d8bd4df5b72abf5289794
 const connectToMongo = require('./db');
 const express = require('express');
 var cors=require("cors");
@@ -7,8 +11,13 @@ app.use(cors())
 app.use(express.json())
 
 // server connected
+<<<<<<< HEAD
 //app.use("/api/auth",require("./routes/auth"))
 app.use("/api/donor",require("./routes/bank"))
+=======
+app.use("/api/auth",require("./routes/auth"))
+// app.use("/api/notes",require("./routes/notes"))
+>>>>>>> 6171a53e32101f8ecf2d8bd4df5b72abf5289794
 app.listen(port,()=>{
     console.log("server connected")
 })

@@ -1,0 +1,27 @@
+.goto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top_btn img{
+    font-size: 2.4rem;
+    width: 2rem;
+    height: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
+    background-color: transparent;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    justify-content: end;
+    cursor: pointer;
+}
+@media (max-width:700px) {
+    .top_btn img{
+        width: 2rem;
+        height: 2rem ;
+    }
+}

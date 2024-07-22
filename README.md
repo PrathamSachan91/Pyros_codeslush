@@ -1,4 +1,4 @@
-# Blood Donating Website
+# Blood Donating Website: DonorDuo(Let's save a life)
 
 Welcome to the Blood Donating Website project! This platform aims to connect blood donors and recipients through an easy-to-use online interface. The goal is to streamline the process of blood donation by facilitating communication and coordination between donors and those in need.
 

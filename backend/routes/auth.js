@@ -80,7 +80,7 @@ router.post("/newuser",[
 const sendotp= async({_id,email},res)=>{ // the id and email might need to be changed
   try {
     // generate a 4 digit otp
-    const otp=`${Math.floor(1000+Math.random()*9000)}`; 
+    const otp=`${Math.floor (1000+Math.random()*9000)}`; 
     
     // otp mail body generator
     var mailoptions={

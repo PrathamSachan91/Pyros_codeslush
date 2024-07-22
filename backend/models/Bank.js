@@ -5,10 +5,7 @@ const BankSchema = new Schema({
     type:String,
     required:true
   },
-  // email:{
-  //   type:string,
-  //   required:true
-  // },
+ 
   image:{
     type:String,
     required:true

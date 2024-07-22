@@ -1,15 +1,26 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useRef, useState, useEffect } from 'react';
 import './cards.css';
 import DonorContext from '../Context/Donor/DonorContext';
 import Carditem from './Carditem';
+import { useNavigate } from 'react-router-dom';
 
-const Cards = ({theme}) => {
-    
+const Cards = ({ theme }) => {
   const context = useContext(DonorContext);
-  const { memories } = context;
+  const navigate = useNavigate();
+  const { memories, getallNote } = context;
   const [memory, setMemory] = useState({ etitle: "", edescription: "", etag: "" });
-  
+  const [searchTerm, setSearchTerm] = useState(""); // State for the search term
   const ref = useRef(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      getallNote();
+    } else {
+      console.log("Token in notes not found");
+      navigate("/login");
+    }
+  }, [getallNote, navigate]);
 
   const updateCard = (currentMemory) => {
     ref.current.click();
@@ -23,6 +34,16 @@ const Cards = ({theme}) => {
   const onChange = (e) => {
     setMemory({ ...memory, [e.target.name]: e.target.value });
   };
+
+  // Function to handle search term change
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  // Filter memories based on search term
+  const filteredMemories = memories.filter(card =>
+    card.bloodGroup.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div>
@@ -38,18 +59,18 @@ const Cards = ({theme}) => {
             <div className="modal-body">
               <form>
                 <div className='description-modal description'>
-                    <div className="mb-3">
+                  <div className="mb-3">
                     <label htmlFor="etitle" className="form-label">Title for Memory</label>
                     <input type="text" className="form-control" onChange={onChange} value={memory.etitle} id="etitle" name="etitle" placeholder="Your Memories are safe with us." />
-                    </div>
+                  </div>
                   <div className="mb-3">
                     <label htmlFor="etag" className="form-label">Tags</label>
                     <input type="text" className="form-control" onChange={onChange} value={memory.etag} id="etag" name="etag" placeholder="Provide suitable tag" />
                   </div>
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="edescription" className="form-label">Description</label>
-                    <input type="text" className="form-control" onChange={onChange} value={memory.edescription} id="edescription" name="edescription" placeholder="Describe your Memory" />
+                  <label htmlFor="edescription" className="form-label">Description</label>
+                  <input type="text" className="form-control" onChange={onChange} value={memory.edescription} id="edescription" name="edescription" placeholder="Describe your Memory" />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="formFileMultiple" className="form-label">Select Files</label>
@@ -64,11 +85,23 @@ const Cards = ({theme}) => {
           </div>
         </div>
       </div>
-      <div className='row my-3 '>
+
+      <div className='row my-3'>
         <h2>Preference List of Donors</h2>
-        {memories.map((card) => {
-          return <Carditem theme={theme} key={card.key} updateCard={updateCard} card={card} />;
-        })}
+        <div className="mb-3">
+          <div className="search">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Search by blood group"
+            value={searchTerm}
+            onChange={handleSearchChange}
+          />
+          </div>
+        </div>
+        {filteredMemories.map((card) => (
+          <Carditem theme={theme} key={card.key} updateCard={updateCard} card={card} />
+        ))}
       </div>
     </div>
   );

@@ -41,6 +41,19 @@
 label{
     font-weight: 500;
 }
+.search{
+    border-radius: 15px;
+    background-color: transparent;
+    border-width: 2px;
+    color: #ffffff;
+    max-width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 5px;
+    margin-left: 40%;
+}
 .btn{
     background-color: #fff;
     color: black;

@@ -23,11 +23,11 @@ const OTP = ({ theme, settheme, applyalert }) => {
         const data = await response.json();
         console.log(data);
         if (response.ok) {
-            navigate("/About");
+            navigate("/FindDonor");
             localStorage.removeItem('userId');
-            applyalert("OTP verified successfully", "success");
+            alert("OTP verified successfully");
         } else {
-            applyalert("Invalid OTP", "danger");
+            alert("Invalid OTP");
         }
     };
 

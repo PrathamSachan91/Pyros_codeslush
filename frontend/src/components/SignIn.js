@@ -33,10 +33,10 @@ const SignIn = ({ theme, settheme,applyalert }) => {
         localStorage.setItem("userId",json.userId)
            navigate("/OTP");
             console.log(json.authtoken);
-            applyalert("Verify via otp","success")
+            alert("Verify via otp","success")
         }
         else{
-            applyalert("Invalid credentials","danger");
+            alert("Invalid credentials","danger");
         }
         
         

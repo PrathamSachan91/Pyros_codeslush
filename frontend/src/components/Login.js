@@ -25,12 +25,14 @@ const Login = ({theme,settheme,applyalert}) => {
         console.log(data)
         if(data.success){
             localStorage.setItem("token",data.authtoken);
-        navigate("/About")
+            localStorage.setItem("email",cred.email)
+            console.log(cred.email);
+        navigate("/FindDonor")
         console.log(data.authtoken)
-        applyalert("Logged in","success");
+        alert("Logged in","success");
         }
         else{
-            applyalert("Invalid credentials","danger");
+            alert("Invalid credentials","danger");
         }
         
 

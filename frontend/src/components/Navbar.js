@@ -9,10 +9,12 @@ import toggle_dark from '../../src/components/assets/day.png';
 import hamburger_light from '../../src/components/assets/hamburger_light.png';
 import hamburger_dark from '../../src/components/assets/hamburger_dark.png';
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = ({ theme, setTheme }) => {
   const [showMediaIcons, setShowMediaIcons] = useState(false);
   const menuRef = useRef(null);
+  const history=useNavigate();
   const toggle_mode = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
   };
@@ -27,6 +29,12 @@ const Navbar = ({ theme, setTheme }) => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+  const Logout=()=>{
+    localStorage.removeItem("token")
+    // setAvail(false);
+    history("/login")
+
+  }
 
   return (
     <div className='nav'>
@@ -37,7 +45,8 @@ const Navbar = ({ theme, setTheme }) => {
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/FindDonor'>Find Donor</Link></li>
             <li><Link to='/BecomeDonor'>Become Donor</Link></li>
-            <li><Link to='/LogIn'>LogIn</Link></li>
+            {(!localStorage.getItem("token"))?<><li><Link to='/SignIn'>SignIn</Link></li>
+            <li><Link to='/Login'>Login</Link></li></>:<Link to='/Login' style={{fontSize:"19px"}} onClick={Logout}>Logout</Link>}
           </ul>
         </div>
         <div className='search-box'>

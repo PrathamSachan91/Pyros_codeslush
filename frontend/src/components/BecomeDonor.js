@@ -22,8 +22,8 @@ const Createmem = (theme,setTheme) => {
       }, [])
   return (
     <div>
-        <div className='container container-form'>
-        <h2>Fill the Details</h2>
+        {/* <div className='container container-form'> */}
+        {/* <h2>Fill the Details</h2>
         <form>
             <div className='description'>
                 <div className="mb-3">
@@ -55,7 +55,7 @@ const Createmem = (theme,setTheme) => {
             </div>
             <button type="submit" className="btn btn-primary btn-form">Submit</button>
         </form>
-        </div>
+        </div> */}
     </div>
   )
 }

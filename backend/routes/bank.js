@@ -5,7 +5,11 @@ const User = require("../models/User");
 dotenv.config();
 const router = express.Router();
 const Bank = require("../models/Bank");
-
+import donor1 from "../public/donor1.png"
+import donor2 from "../public/donor2.png"
+import donor3 from "../public/donor3.png"
+import donor4 from "../public/donor4.png"
+import donor5 from "../public/donor5.png"
 // Nodemailer transporter setup
 var transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -18,31 +22,31 @@ var transporter = nodemailer.createTransport({
 const seedData = [
     {
         name: "Tushar Mehta",
-        image: "https://media.geeksforgeeks.org/wp-content/uploads/20240110004602/pexels-chan-walrus-958545-(1).jpg",
+        image:donor1,
         age: 20,
         bloodGroup: "A+",
     },
     {
         name: "Pankaj Arora",
-        image: "https://media.geeksforgeeks.org/wp-content/uploads/20240110004602/pexels-chan-walrus-958545-(1).jpg",
+        image: donor2,
         age: 25,
         bloodGroup: "B+",
     },
     {
         name: "Paras Gupta",
-        image: "https://media.geeksforgeeks.org/wp-content/uploads/20240110004602/pexels-chan-walrus-958545-(1).jpg",
+        image: donor3,
         age: 22,
         bloodGroup: "O+",
     },
     {
         name: "Jimin",
-        image: "https://media.geeksforgeeks.org/wp-content/uploads/20240110004602/pexels-chan-walrus-958545-(1).jpg",
+        image: donor4,
         age: 20,
         bloodGroup: "AB+",
     },
     {
         name: "Aarav Sharma",
-        image: "https://media.geeksforgeeks.org/wp-content/uploads/20240110004602/pexels-chan-walrus-958545-(1).jpg",
+        image: donor5,
         age: 28,
         bloodGroup: "A-",
     }

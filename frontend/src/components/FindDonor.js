@@ -4,7 +4,7 @@ import Cards from './Cards';
 
 const Createmem = (theme,setTheme) => {
   return (
-    <div>
+    <div className='to-design'>
         <div className='container container-form'>
         <h2>Fill the Details</h2>
         <form>

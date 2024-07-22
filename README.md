@@ -38,6 +38,10 @@ To get a local copy up and running, follow these steps:
     ```sh
     npm start
     ```
+5. **For backend development server:**
+   ```sh
+   nodemon index.js
+   ```
 
 Your application will be available at `http://localhost:3000` (or another port if specified).
 

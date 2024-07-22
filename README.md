@@ -1,3 +1,73 @@
-# Pyros_codeslush
-hello
-priyanshu added finally 
+Blood Donating Website
+Welcome to the Blood Donating Website project! This platform aims to connect blood donors and recipients through an easy-to-use online interface. The goal is to streamline the process of blood donation by facilitating communication and coordination between donors and those in need.
+
+Features
+User Authentication: Secure login and signup functionality for users to manage their profiles.
+Responsive Design: Fully responsive navigation bar and footer that adapts to various screen sizes.
+Theme Toggle: Dark mode and light mode theme toggle for a personalized user experience.
+Donation Forms: Forms for users to register as blood donors and to search for available blood donors.
+
+User login/signup page
+Responsive navbar and footer
+Theme toggle functionality
+Donor registration and search forms
+Installation
+To get a local copy up and running, follow these steps:
+
+Clone the repository:
+
+bash
+Copy code
+git clone https://github.com/yourusername/blood-donating-website.git
+Navigate to the project directory:
+
+bash
+Copy code
+cd blood-donating-website
+Install dependencies (if applicable):
+
+bash
+Copy code
+npm install
+Start the development server:
+
+bash
+Copy code
+npm start
+Your application will be available at http://localhost:3000 (or another port if specified).
+
+Usage
+Create an Account: Register as a user by signing up with your email address.
+Login: Use your credentials to log into your account.
+Toggle Theme: Switch between light and dark modes using the toggle button.
+Register as a Donor: Fill out the donor registration form to offer your blood.
+Find a Donor: Use the search form to find available donors.
+Contributing
+Contributions are welcome! If you have suggestions or improvements, please open an issue or submit a pull request.
+
+Fork the repository
+
+Create a new branch:
+
+bash
+Copy code
+git checkout -b feature/YourFeature
+Commit your changes:
+
+bash
+Copy code
+git commit -m "Add new feature"
+Push to the branch:
+
+bash
+Copy code
+git push origin feature/YourFeature
+Open a pull request
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Contact
+For any questions or inquiries, please contact:
+
+Project Maintainer: [Pratham,Priyanshu,Ruchita]

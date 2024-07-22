@@ -1,4 +1,4 @@
-![Screenshot 2024-07-22 130122](https://github.com/user-attachments/assets/979bdeff-dc0d-4232-bd12-d1731737547d)![Screenshot 2024-07-22 125611](https://github.com/user-attachments/assets/9af835e3-38b6-4d8e-ab7a-22b293b76bf1)Blood Donating Website
+Blood Donating Website
 Welcome to the Blood Donating Website project! This platform aims to connect blood donors and recipients through an easy-to-use online interface. The goal is to streamline the process of blood donation by facilitating communication and coordination between donors and those in need.
 
 Features

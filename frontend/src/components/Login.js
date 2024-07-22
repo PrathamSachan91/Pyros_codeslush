@@ -25,6 +25,8 @@ const Login = ({theme,settheme,applyalert}) => {
         console.log(data)
         if(data.success){
             localStorage.setItem("token",data.authtoken);
+            localStorage.setItem("email",cred.email)
+            console.log(cred.email);
         navigate("/FindDonor")
         console.log(data.authtoken)
         alert("Logged in","success");

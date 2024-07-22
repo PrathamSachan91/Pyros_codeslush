@@ -59,6 +59,9 @@ ul li a{
 .search-box input::placeholder{
     color: #ffffff;
 }
+.search-box input{
+    color: #fff;
+}
 .search-box img{
     width: 20px;
     cursor: pointer;
@@ -66,7 +69,8 @@ ul li a{
 .dark .nav{
     background-color: #000;
     color: #fff;
-    box-shadow: 0 4px 8px 0 rgba(141, 139, 139, 0.7), 0 6px 20px 0 rgba(141, 139, 139,.19);
+    box-shadow: 0 4px 8px rgba(141, 139, 139, 0.6), 0 0 8px 4px rgba(141, 139, 139, 0.4);
+    z-index: 10;
 }
 .dark .search-box{
     background: #fff;
@@ -95,7 +99,7 @@ ul li a{
         height: 45px;
     }
 }
-@media (max-width: 1020px){
+@media (max-width: 1040px){
     .menu_link ul {
         display: none;
         z-index: 999;

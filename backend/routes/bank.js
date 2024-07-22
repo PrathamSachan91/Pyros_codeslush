@@ -2,16 +2,14 @@ const express = require("express");
 const dotenv = require("dotenv");
 const nodemailer = require("nodemailer");
 const User = require("../models/User");
-dotenv.config();
-const router = express.Router();
 const Bank = require("../models/Bank");
-import donor1 from "../public/donor1.png"
-import donor2 from "../public/donor2.png"
-import donor3 from "../public/donor3.png"
-import donor4 from "../public/donor4.png"
-import donor5 from "../public/donor5.png"
+
+dotenv.config();
+
+const router = express.Router();
+
 // Nodemailer transporter setup
-var transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: process.env.USER_EMAIL,
@@ -22,37 +20,36 @@ var transporter = nodemailer.createTransport({
 const seedData = [
     {
         name: "Tushar Mehta",
-        image:donor1,
+        image: "https://github.com/agarwal12ruch/Pyros_codeslush/blob/main/backend/public/donor2.jpg?raw=true",
         age: 20,
         bloodGroup: "A+",
     },
     {
         name: "Pankaj Arora",
-        image: donor2,
+        image: "https://github.com/agarwal12ruch/Pyros_codeslush/blob/main/backend/public/donor1.png?raw=true",
         age: 25,
         bloodGroup: "B+",
     },
     {
         name: "Paras Gupta",
-        image: donor3,
+        image: "https://github.com/agarwal12ruch/Pyros_codeslush/blob/main/backend/public/donor3.jpg?raw=true",
         age: 22,
         bloodGroup: "O+",
     },
     {
         name: "Jimin",
-        image: donor4,
+        image: "https://github.com/agarwal12ruch/Pyros_codeslush/blob/main/backend/public/donor5.jpeg?raw=true",
         age: 20,
         bloodGroup: "AB+",
     },
     {
         name: "Aarav Sharma",
-        image: donor5,
+        image: "https://raw.githubusercontent.com/agarwal12ruch/Pyros_codeslush/main/backend/public/donor4.webp",
         age: 28,
         bloodGroup: "A-",
     }
 ];
 
-// To avoid crashing the whole database when one of the data objects doesn't get inserted.
 const options = { ordered: true };
 
 const seedDatabase = async () => {
@@ -104,14 +101,12 @@ router.post("/selectdonor", async (req, res) => {
     const { userEmail } = req.body;
 
     try {
-        // Fetch the user's information by email
         const user = await User.findOne({ email: userEmail });
         console.log(user);
         if (!user) {
             return res.status(404).json({ success: false, message: "User not found" });
         }
 
-        // Send an email to the user
         await sendMailToUser(user.email, res);
     } catch (error) {
         console.error(error.message);

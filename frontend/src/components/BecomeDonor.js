@@ -1,7 +1,25 @@
 import React from 'react'
 import "./FindDonor.css"
-
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import DonorContext from '../Context/Donor/DonorContext'
 const Createmem = (theme,setTheme) => {
+    const context=useContext(DonorContext);
+    const{memories,getallNote}=context;
+    const Navigate=useNavigate();
+    useEffect(() => {
+        const val=localStorage.getItem("token");
+        if(val) {
+           getallNote();
+        } 
+        else{
+          console.log("token in notes not found")
+          Navigate("/login");
+        }
+      
+        
+      }, [])
   return (
     <div>
         <div className='container container-form'>

@@ -1,13 +1,27 @@
 import React, { useContext, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import './cards.css';
 import DonorContext from '../Context/Donor/DonorContext';
 import Carditem from './Carditem';
-
+import { useNavigate } from 'react-router-dom';
 const Cards = ({theme}) => {
     
   const context = useContext(DonorContext);
-  const { memories } = context;
+  const Navigate=useNavigate();
+  const { memories,getallNote } = context;
   const [memory, setMemory] = useState({ etitle: "", edescription: "", etag: "" });
+  useEffect(() => {
+    const val=localStorage.getItem("token");
+    if(val) {
+      getallNote();
+    } 
+    else{
+      console.log("token in notes not found")
+      Navigate("/login");
+    }
+  
+    
+  }, [])
   
   const ref = useRef(null);
 

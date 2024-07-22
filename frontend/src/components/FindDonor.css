@@ -1,13 +1,13 @@
 .container-form{
     width: 80vh;
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     padding-top: 15px;
     min-height: 63vh;
     color: #ffffff;
     background-color:  #6f6fcf;
     border-radius: 20px;
     font-size: 18px;
-    margin-bottom: 10px;
 }
 h2{
     text-align: center;

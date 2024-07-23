@@ -17,5 +17,12 @@ const BankSchema = new Schema({
     type:String,
     required:true
   },
+  city:{
+    type:String,
+    required:true
+  },
+  description:{
+    type:String
+  }
 });
 module.exports=mongoose.model('Bank',BankSchema)

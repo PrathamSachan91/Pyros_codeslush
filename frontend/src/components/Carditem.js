@@ -45,8 +45,8 @@ const Carditem = ({ card, updateCard }) => {
             <div className="card my-3">
                 <img src={card.image} className="card-img-top" alt="Memory" />
                 <div className="card-body">
-                    <h5 className="card-title card-text">{card.name} ({"Age:" + card.age})</h5>
-                    <p className="card-text">{card.bloodGroup}</p>
+                    <h5 className="card-title card-text">{card.name} ({"Age : " + card.age})</h5>
+                    <h5 className="card-text">{card.bloodGroup}</h5>
                     <div className='edit-btn'>
                         <Link to="#" className="btn btn-primary" onClick={request} disabled={wait}>
                             {wait ? "Wait" : "Request Blood"}

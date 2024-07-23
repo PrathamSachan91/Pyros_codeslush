@@ -36,7 +36,7 @@ const Createmem = (theme,setTheme) => {
                 </div>
             </div>
             <div className="mb-3">
-                <label htmlFor="description" className="form-label">Description </label>
+                <label htmlFor="description" className="form-label">Description about your Health</label>
                 <input type="text" className="form-control" id="exampleInputPassword1" placeholder='Describe'/>
             </div>
             <div className='description'>

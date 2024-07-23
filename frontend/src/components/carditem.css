@@ -9,7 +9,6 @@
 .dark .div1 {
     background-color: #14213d;
 }
-
 .card {
     background-color: #6f6fcf;
     display: flex;
@@ -36,19 +35,13 @@
     justify-content: start;
     align-items: center;
 }
-
+.card-body h5{
+    font-size: 17.5px;
+}
 .card-text {
     color: #fff;
     text-align: start;
-    padding: 10px;
-}
-
-.card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
-    text-align: center;
+    padding: 3px 20px;
 }
 
 @media (max-width: 1200px) {

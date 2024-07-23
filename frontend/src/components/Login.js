@@ -56,7 +56,7 @@ const Login = ({theme,settheme,applyalert}) => {
                 </div>
                 <div className="remember-forget">
                     <label>
-                        <input type="checkbox" />Remember me
+                        <input type="checkbox"  className='check-edit'/>Remember me
                     </label>
                 </div>
                 <button type="submit" className="btn" id="redirectButton">LOGIN</button>

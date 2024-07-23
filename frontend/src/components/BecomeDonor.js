@@ -6,7 +6,7 @@ import { useContext } from 'react'
 import DonorContext from '../Context/Donor/DonorContext'
 const Createmem = (theme,setTheme) => {
     const context=useContext(DonorContext);
-    const{memories,getallNote}=context;
+    const{getallNote}=context;
     const Navigate=useNavigate();
     useEffect(() => {
         const val=localStorage.getItem("token");
@@ -19,7 +19,7 @@ const Createmem = (theme,setTheme) => {
         }
       
         
-      }, [])
+      })
   return (
     <div>
         <div className='container container-form'>

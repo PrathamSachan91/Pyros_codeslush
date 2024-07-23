@@ -1,12 +1,12 @@
 import React from 'react'
-import "./FindDonor.css"
+import "./BecomeDonor.css"
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import DonorContext from '../Context/Donor/DonorContext'
 const Createmem = (theme,setTheme) => {
     const context=useContext(DonorContext);
-    const{memories,getallNote}=context;
+    const{getallNote}=context;
     const Navigate=useNavigate();
     useEffect(() => {
         const val=localStorage.getItem("token");
@@ -19,7 +19,7 @@ const Createmem = (theme,setTheme) => {
         }
       
         
-      }, [])
+      })
   return (
     <div>
         <div className='container container-form'>
@@ -36,7 +36,7 @@ const Createmem = (theme,setTheme) => {
                 </div>
             </div>
             <div className="mb-3">
-                <label htmlFor="description" className="form-label">Describe Medival Condition if any </label>
+                <label htmlFor="description" className="form-label">Description about your Health</label>
                 <input type="text" className="form-control" id="exampleInputPassword1" placeholder='Describe'/>
             </div>
             <div className='description'>
@@ -50,7 +50,7 @@ const Createmem = (theme,setTheme) => {
                 </div>
             </div>
             <div className="mb-3">
-                <label htmlFor="formFileMultiple" className="form-label">Select your Medical certificate</label>
+                <label htmlFor="formFileMultiple" className="form-label">Select your Medical certificate if any</label>
                 <input className="form-control" type="file" id="formFileMultiple" multiple />
             </div>
             <button type="submit" className="btn btn-primary btn-form">Submit</button>

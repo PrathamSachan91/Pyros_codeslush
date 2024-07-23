@@ -45,8 +45,9 @@ const Navbar = ({ theme, setTheme }) => {
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/FindDonor'>Find Donor</Link></li>
             <li><Link to='/BecomeDonor'>Become Donor</Link></li>
-            {(!localStorage.getItem("token"))?<><li><Link to='/SignIn'>SignIn</Link></li>
-            <li><Link to='/Login'>Login</Link></li></>:<Link to='/Login' style={{fontSize:"19px"}} onClick={Logout}>Logout</Link>}
+            {
+            (!localStorage.getItem("token"))?<>
+            <li><Link to='/Login'>Login</Link></li></>:<li><Link to='/Login' onClick={Logout}>Logout</Link></li>}
           </ul>
         </div>
         <div className='search-box'>

@@ -3,7 +3,7 @@ import DonorContext from './DonorContext'
 const DonorState = (props) => {
     const DonorInitial=[];
     const host="http://localhost:5000";
-    const [memories,setmemory]=useState(DonorInitial)
+    const [Donorin,setmemory]=useState(DonorInitial)
     const getallNote=async()=>{
       const token=localStorage.getItem("token");
       const url=`${host}/api/donor/ruch`;
@@ -21,7 +21,7 @@ const DonorState = (props) => {
 
   }
   return (
-    <DonorContext.Provider value={{memories,setmemory,getallNote}}>
+    <DonorContext.Provider value={{Donorin,setmemory,getallNote}}>
         {props.children}
     </DonorContext.Provider>
   )

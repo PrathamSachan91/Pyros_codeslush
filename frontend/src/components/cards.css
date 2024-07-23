@@ -1,51 +1,62 @@
-.modal-header{
+.modal-header {
     background-color: #6f6fcf;
     color: #ffffff;
 }
-.modal-body{
+
+.modal-body {
     background-color: #8787e3;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.modal-footer{
+
+.modal-body img {
+    border-radius: 50%;
+    width: 220px;
+}
+
+.modal-content li{
+    display: block;
+    text-align: start;
+}
+
+.modal-footer {
     background-color: #6f6fcf;
 }
-.dark .modal-header{
+
+.dark .modal-header {
     background-color: #19216b;
 }
-.dark h5{
-    color: #fff;
-}
-.dark .modal-body{
+
+.dark .modal-body {
     background-color: #1D267D;
 }
-.dark .modal-footer{
+
+.dark .modal-footer {
     background-color: #19216b;
 }
-.row{
+
+.dark h5 {
+    color: #fff;
+}
+
+.row {
     margin: 0px;
 }
-.description{
-    display: flex;
-    justify-content: space-between;
-}
-.form-control{
+
+.form-control {
     border-radius: 15px;
     background-color: transparent;
     border-width: 2px;
-    color: #ffffff;
+    color: #000000;
 }
-.mb-3 input::placeholder{
-    color: #ffffff;
-    font-size: 16px;
-}
-label{
-    font-weight: 500;
-}
-.search{
+
+.search {
     border-radius: 15px;
     background-color: transparent;
     border-width: 2px;
-    color: #ffffff;
+    color: #000000;
     max-width: 20%;
     display: flex;
     justify-content: center;
@@ -54,25 +65,39 @@ label{
     top: 5px;
     margin-left: 40%;
 }
-.btn{
+
+.search input {
+    border-color: #222;
+    width: 50vh;
+}
+.dark .search input{
+    border-color: #fff;
+}
+.mb-3 .search input::placeholder{
+    color: #575757;
+}
+.dark .mb-3 .search input::placeholder{
+    color: #d6d3d3;
+}
+.btn {
     background-color: #fff;
     color: black;
     font-weight: 600;
     border-radius: 35px;
 }
-@media(max-width:600px){
-    .description-modal input{
+
+@media(max-width: 600px) {
+    .description-modal input {
         width: 200px;
     }
-    .mb-3 input::placeholder{
-        font-size: 14px;
-    }
 }
-@media(max-width:500px){
-    .modal-dialog{
+
+@media(max-width: 500px) {
+    .modal-dialog {
         margin: 50px 50px;
     }
-    .description-modal input{
+    
+    .description-modal input {
         width: 170px;
     }
 }

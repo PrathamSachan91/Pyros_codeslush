@@ -1,19 +1,72 @@
-.div1{
+.div1 {
     background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
 }
-.dark .div1{
+
+.dark .div1 {
     background-color: #14213d;
 }
-.card{
+
+.card {
     background-color: #6f6fcf;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 350px;
+    margin: 15px;
+    border-radius: 10px;
+    overflow: hidden;
 }
-.edit-btn{
+
+.card img {
+    width: 100%;
+    height: 350px;
+}
+
+.dark .card {
+    background-color: #1D267D;
+}
+
+.edit-btn {
     display: flex;
     justify-content: start;
+    align-items: center;
 }
-.card-text{
+
+.card-text {
     color: #fff;
+    text-align: start;
+    padding: 10px;
 }
-.dark .card{
-    background-color: #1D267D;
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+    .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.card-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
 }

@@ -2,13 +2,16 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    
-  }
-  .ContactUs{
-    background-color: #e6e3e3;
+   background-color: #e6e3e3; 
   }
   .dark .body{
     background-color: #222;
+  }
+  .dark h2{
+    color: #fff;
+  }
+  .dark .contact-form h2{
+    color: #ffffff;
   }
   p{
     text-align: start;

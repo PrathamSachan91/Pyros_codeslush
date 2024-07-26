@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './carditem.css';
 
-const Carditem = (props) => {
-    const { card, updateCard } = props;
+const Carditem = ({ card, updateCard }) => {
     const [wait, setWait] = useState(false);
 
     const request = async () => {
-        setWait(true); 
+        setWait(true);
 
         const userEmail = localStorage.getItem("email");
         if (!userEmail) {
             console.error("No user email found in local storage");
-            setWait(false); 
+            alert("No user email found in local storage");
+            setWait(false);
             return;
         }
 
@@ -22,7 +22,7 @@ const Carditem = (props) => {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ userEmail })
+                body: JSON.stringify({ userEmail, donorEmail: card.email }) // Assuming card.email contains donor's email
             });
 
             const data = await response.json();
@@ -36,24 +36,22 @@ const Carditem = (props) => {
             console.error("Error making request:", error);
             alert("Request failed: " + error.message);
         } finally {
-            setWait(false); 
+            setWait(false);
         }
     };
 
     return (
         <div className='col-md-3 div1'>
-            <div className="card my-3 ">
+            <div className="card my-3">
                 <img src={card.image} className="card-img-top" alt="Memory" />
                 <div className="card-body">
-                    <h5 className="card-title card-text">{card.name} ({ "Age:" + card.age})</h5>
-                    <p className="card-text">{card.bloodGroup}</p>
-                    
+                    <h5 className="card-title card-text">{card.name} ({"Age : " + card.age})</h5>
+                    <h5 className="card-text">{card.bloodGroup}</h5>
                     <div className='edit-btn'>
-                        
-                        <Link to="#" className="btn btn-primary" onClick={request}>
+                        <Link to="#" className="btn btn-primary" onClick={request} disabled={wait}>
                             {wait ? "Wait" : "Request Blood"}
                         </Link>
-                        
+                        <Link to="#" className="btn btn-primary mx-3" onClick={() => { updateCard(card) }}>Review</Link>
                     </div>
                 </div>
             </div>

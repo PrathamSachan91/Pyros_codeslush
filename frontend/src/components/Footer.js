@@ -58,11 +58,11 @@ const Footer = ({theme,setTheme}) => {
                     <Link to='/About'>
                         <p>About Us</p>
                     </Link>
-                    <Link to='http'>
+                    <Link to='/ContactUs'>
                         <p>Contact</p>
                     </Link>
                     <Link to='http'>
-                        <p>Career</p>
+                        <p>Review</p>
                     </Link>
                     <Link to='http'>
                         <p>Explore</p>

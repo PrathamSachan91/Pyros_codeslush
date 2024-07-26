@@ -23,30 +23,40 @@ const seedData = [
         image: "https://github.com/agarwal12ruch/Pyros_codeslush/blob/main/backend/public/donor2.jpg?raw=true",
         age: 20,
         bloodGroup: "A+",
+        city: "Lucknow",
+        description: "Physically fit with no past medical condition."
     },
     {
         name: "Pankaj Arora",
         image: "https://github.com/agarwal12ruch/Pyros_codeslush/blob/main/backend/public/donor1.png?raw=true",
         age: 25,
         bloodGroup: "B+",
+        city: "Kota",
+        description: "Physically fit with no past medical condition."
     },
     {
         name: "Paras Gupta",
         image: "https://github.com/agarwal12ruch/Pyros_codeslush/blob/main/backend/public/donor3.jpg?raw=true",
         age: 22,
         bloodGroup: "O+",
+        city: "Indore",
+        description: "Physically fit with no past medical condition."
     },
     {
         name: "Jimin",
         image: "https://github.com/agarwal12ruch/Pyros_codeslush/blob/main/backend/public/donor5.jpeg?raw=true",
         age: 20,
         bloodGroup: "AB+",
+        city: "Agra",
+        description: "Physically fit with no past medical condition."
     },
     {
         name: "Aarav Sharma",
         image: "https://raw.githubusercontent.com/agarwal12ruch/Pyros_codeslush/main/backend/public/donor4.webp",
         age: 28,
         bloodGroup: "A-",
+        city: "Etawa",
+        description: "Physically fit with no past medical condition."
     }
 ];
 

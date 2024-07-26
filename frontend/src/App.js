@@ -9,6 +9,7 @@ import Goto from './components/Goto';
 import FindDonor from './components/FindDonor';
 import BecomeDonor from './components/BecomeDonor';
 import OTP from "./components/OTP"
+import ContactUs from './components/Contactus';
 import{
   BrowserRouter as Router,
   Routes,
@@ -36,6 +37,7 @@ const App = () => {
           <Route path='/OTP' element={<OTP theme={theme} setTheme={setTheme}/>}/>
           <Route path='/FindDonor' element={<FindDonor theme={theme} setTheme={setTheme}/>}/>
           <Route path='/BecomeDonor' element={<BecomeDonor theme={theme} setTheme={setTheme}/>}/>
+          <Route path='/ContactUs' element={<ContactUs theme={theme} setTheme={setTheme}/>}/>
         </Routes>
         </div>
         <div className={` ${theme}`}>

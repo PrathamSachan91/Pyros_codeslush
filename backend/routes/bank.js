@@ -74,6 +74,7 @@ const seedDatabase = async () => {
 };
 seedDatabase();
 
+
 router.get("/ruch", async (req, res) => {
     try {
         const donors = await Bank.find({});

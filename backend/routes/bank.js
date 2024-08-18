@@ -18,53 +18,53 @@ const transporter = nodemailer.createTransport({
 });
 
 const seedData = [
-    {
-        name: "Tushar Mehta",
-        image: "https://github.com/agarwal12ruch/Pyros_codeslush/blob/main/backend/public/donor2.jpg?raw=true",
-        age: 20,
-        bloodGroup: "A+",
-        city: "Lucknow",
-        description: "Physically fit with no past medical condition."
-    },
-    {
-        name: "Pankaj Arora",
-        image: "https://github.com/agarwal12ruch/Pyros_codeslush/blob/main/backend/public/donor1.png?raw=true",
-        age: 25,
-        bloodGroup: "B+",
-        city: "Kota",
-        description: "Physically fit with no past medical condition."
-    },
-    {
-        name: "Paras Gupta",
-        image: "https://github.com/agarwal12ruch/Pyros_codeslush/blob/main/backend/public/donor3.jpg?raw=true",
-        age: 22,
-        bloodGroup: "O+",
-        city: "Indore",
-        description: "Physically fit with no past medical condition."
-    },
-    {
-        name: "Jimin",
-        image: "https://github.com/agarwal12ruch/Pyros_codeslush/blob/main/backend/public/donor5.jpeg?raw=true",
-        age: 20,
-        bloodGroup: "AB+",
-        city: "Agra",
-        description: "Physically fit with no past medical condition."
-    },
-    {
-        name: "Aarav Sharma",
-        image: "https://raw.githubusercontent.com/agarwal12ruch/Pyros_codeslush/main/backend/public/donor4.webp",
-        age: 28,
-        bloodGroup: "A-",
-        city: "Etawa",
-        description: "Physically fit with no past medical condition."
-    }
+    // {
+    //     name: "Tushar Mehta",
+    //     image: "https://github.com/agarwal12ruch/Pyros_codeslush/blob/main/backend/public/donor2.jpg?raw=true",
+    //     age: 20,
+    //     bloodGroup: "A+",
+    //     city: "Lucknow",
+    //     description: "Physically fit with no past medical condition."
+    // },
+    // {
+    //     name: "Pankaj Arora",
+    //     image: "https://github.com/agarwal12ruch/Pyros_codeslush/blob/main/backend/public/donor1.png?raw=true",
+    //     age: 25,
+    //     bloodGroup: "B+",
+    //     city: "Kota",
+    //     description: "Physically fit with no past medical condition."
+    // },
+    // {
+    //     name: "Paras Gupta",
+    //     image: "https://github.com/agarwal12ruch/Pyros_codeslush/blob/main/backend/public/donor3.jpg?raw=true",
+    //     age: 22,
+    //     bloodGroup: "O+",
+    //     city: "Indore",
+    //     description: "Physically fit with no past medical condition."
+    // },
+    // {
+    //     name: "Jimin",
+    //     image: "https://github.com/agarwal12ruch/Pyros_codeslush/blob/main/backend/public/donor5.jpeg?raw=true",
+    //     age: 20,
+    //     bloodGroup: "AB+",
+    //     city: "Agra",
+    //     description: "Physically fit with no past medical condition."
+    // },
+    // {
+    //     name: "Aarav Sharma",
+    //     image: "https://raw.githubusercontent.com/agarwal12ruch/Pyros_codeslush/main/backend/public/donor4.webp",
+    //     age: 28,
+    //     bloodGroup: "A-",
+    //     city: "Etawah",
+    //     description: "Physically fit with no past medical condition."
+    // }
 ];
 
 const options = { ordered: true };
 
 const seedDatabase = async () => {
     try {
-        await Bank.deleteMany();
+        //await Bank.deleteMany();
         console.log("Inserting data:", seedData);
         await Bank.insertMany(seedData, options);
         console.log("Database seeded successfully.");
@@ -74,6 +74,18 @@ const seedDatabase = async () => {
 };
 seedDatabase();
 
+router.post("/newdonor", async (req, res) => {
+    try {
+       const {name,image,age,bloodGroup,city,description}=req.body;
+       const donor= new Bank({
+        name,image,age,bloodGroup,city,description
+       })
+      await donor.save();
+      res.status(200).json(donor);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
 router.get("/ruch", async (req, res) => {
     try {

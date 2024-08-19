@@ -14,14 +14,34 @@ const DonorState = (props) => {
               "auth-token": token // Use the retrieved token here
           },
       });
+
   
       const json = await response.json();
-       console.log(json);
+      //  console.log(json);
       setmemory(json);
 
   }
+  const adddata=async(name,image,age,bloodGroup,city,description)=>{
+    const url=`${host}/api/donor/newdonor`;
+    const token=localStorage.getItem("token");
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json",
+          "auth-token": token,
+      },
+      body: JSON.stringify({name, image, age, bloodGroup, city, description}),
+  });
+  
+  const text = await response.text(); // Use text to see the raw response
+  console.log(text);
+  const json = JSON.parse(text); // Parse it manually to check for errors
+  console.log(json);
+  setmemory([...Donorin, json]);
+  
+  }
   return (
-    <DonorContext.Provider value={{Donorin,setmemory,getallNote}}>
+    <DonorContext.Provider value={{Donorin,setmemory,getallNote,adddata}}>
         {props.children}
     </DonorContext.Provider>
   )

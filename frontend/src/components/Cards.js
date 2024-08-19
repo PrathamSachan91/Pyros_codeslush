@@ -32,9 +32,8 @@ const Cards = ({ theme }) => {
   };
 
   const filteredDonor = Donorin.filter(card =>
-    card.bloodGroup.toLowerCase().includes(searchTerm.toLowerCase())
+    card.bloodGroup && card.bloodGroup.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
   return (
     <div>
       <button type="button" ref={ref} className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal"></button>

@@ -43,7 +43,7 @@ const Carditem = ({ card, updateCard }) => {
     return (
         <div className='col-md-3 div1'>
             <div className="card my-3">
-                {card.image? <img src={card.image} className="card-img-top" alt="" />:<img src="Memoryhttps://www.pngarts.com/files/10/Default-Profile-Picture-Transparent-Image.png" alt="" />}
+                {card.image? <img src={card.image} className="card-img-top" alt="" />:<img src="https://www.pngarts.com/files/10/Default-Profile-Picture-Transparent-Image.png" alt="" />}
                 
                 <div className="card-body">
                     <h5 className="card-title card-text">{card.name} ({"Age : " + card.age})</h5>
